@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.ArrayList;
 import java.util.Collection;
 
+// 로그인 정보를 담고 있는 클레스
 public class UserDetailsImpl implements UserDetails {
 
     private final User user;
@@ -53,6 +54,7 @@ public class UserDetailsImpl implements UserDetails {
         return true;
     }
 
+//    유저 권한 설정
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         UserRoleEnum userRole = user.getRole();

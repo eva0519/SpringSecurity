@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+//  회원 상세정보를 담고 있는 클레스
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 

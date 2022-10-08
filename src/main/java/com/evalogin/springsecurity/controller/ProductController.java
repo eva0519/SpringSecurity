@@ -4,6 +4,7 @@ package com.evalogin.springsecurity.controller;
 import com.evalogin.springsecurity.dto.ProductMypriceRequestDto;
 import com.evalogin.springsecurity.dto.ProductRequestDto;
 import com.evalogin.springsecurity.entity.Product;
+import com.evalogin.springsecurity.entity.UserRoleEnum;
 import com.evalogin.springsecurity.security.UserDetailsImpl;
 import com.evalogin.springsecurity.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,7 +56,7 @@ public class ProductController {
     }
 
     // (관리자용) 등록된 모든 상품 목록 조회
-    @Secured("ROLE_ADMIN")
+    @Secured(value = UserRoleEnum.Authority.ADMIN)
     @GetMapping("/api/admin/products")
     public List<Product> getAllProducts() {
         return productService.getAllProducts();
